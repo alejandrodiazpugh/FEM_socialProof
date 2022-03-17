@@ -1,0 +1,15 @@
+@import "../abstracts/variables", "../abstracts/mixins";
+
+.criticReviews__card {
+    @include sizing(90%, auto, 5%, 5%);
+    @include flexValues(column, wrap, center, center);
+    background-color: $lightGrayishMagenta;
+    border-radius: 0.5rem;
+
+    &--stars {
+        padding-bottom: 1rem;
+    }
+    h4 {
+        color: $veryDarkMagenta;
+    }
+}

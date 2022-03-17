@@ -1,0 +1,24 @@
+// Primary colors
+$veryDarkMagenta: hsl(300, 43%, 22%);
+$softPink: hsl(333, 80%, 67%);
+
+// Neutral colors
+
+$darkGrayishMagenta: hsl(303, 10%, 53%);
+$lightGrayishMagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+
+// Maps
+
+$gridParameters: (
+    "mainText": 1 / span 3,
+    "criticReviews": 4 / span 3,
+    "customerReviews": 1 / span 6
+);
+
+$translateMap: (
+    "1": -5%,
+    "2": 0,
+    "3": 5%
+);

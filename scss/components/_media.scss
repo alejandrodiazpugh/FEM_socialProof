@@ -1,0 +1,59 @@
+@import "./mainText", "./customerReviews", "./criticReviews", "../abstracts/mixins", "../abstracts/variables";
+
+@media screen and(min-width: 900px) {
+    body {
+        background-image: url(../../images/bg-pattern-top-desktop.svg), url(../../images/bg-pattern-bottom-desktop.svg);
+        background-position: top left, bottom right;
+    }
+    .container {
+        @include gridValues(repeat(6,1fr));
+    }
+    @each $class, $gridColumn in $gridParameters {
+        .#{$class} {
+            grid-column: $gridColumn;
+        }
+    
+    }
+    .mainText {
+        text-align: left;
+        h1{
+            @include sizing(auto, auto, 10% 6% 3%);
+            max-inline-size: 14ch;
+            font-size: 270%;
+        }
+        p {
+            @include sizing(auto, auto, 0 6% 3%);
+            padding-inline-end: 22%;
+        }
+    }
+    .criticReviews {
+        &__card {
+            flex-direction: row;
+            gap: 1rem;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 4%;
+            @each $child, $translate in $translateMap {
+                &:nth-child(#{$child}) {
+                    transform: translateX($translate);
+                }
+            }
+            &--stars {
+                padding: 0;
+            }
+        }
+    }
+    .customerReviews {
+        @include flexValues(row, nowrap, center, center);
+        &__card {
+            @include sizing(100%, auto, 3%, 2%);
+            @each $child, $translate in $translateMap {
+                &:nth-child(#{$child}) {
+                    transform: translateY($translate);
+                }
+            }
+        }
+        
+    }
+}
+

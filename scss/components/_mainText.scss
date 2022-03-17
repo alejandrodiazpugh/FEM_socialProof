@@ -1,0 +1,15 @@
+@import "../abstracts/variables", "../abstracts/mixins";
+
+.mainText {
+    text-align: center;
+
+    h1 {
+        color: $veryDarkMagenta;
+        margin: 22% 15% 5%;
+    }
+    p {
+        margin: 1% 5%;
+        color: $darkGrayishMagenta;
+
+    }
+}

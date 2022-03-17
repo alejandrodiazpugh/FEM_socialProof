@@ -1,0 +1,37 @@
+@import "../abstracts/mixins", "../abstracts/variables";
+
+.customerReviews__card {
+    @include sizing(auto, auto, 5%, 5%);
+    @include gridValues(20% 80%, 40% 60%);
+    background-color: $veryDarkMagenta;
+    border-radius: .5rem;
+    img {
+        @include sizing(40px, 40px, 25%);
+        border-radius: 50%;
+        grid-column: 1;
+        align-self: center;
+    }
+    &--user {
+        grid-column: 2;
+        align-self: center;
+        justify-self: start;
+        padding: 5%;
+        h5 {
+            color: $white;
+        }
+        p {
+            color: $softPink;
+            font-size: 13px;
+        }
+    }
+    &--review {
+        grid-column: 1 / span-3;
+        color: $white;
+        @include sizing(auto, auto, 5%);
+        p {
+            font-size: 13px;
+            line-height: 1.5;
+            max-inline-size: 66ch;
+        }
+    }
+}
